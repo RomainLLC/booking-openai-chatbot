@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+  <title>OpenAI résa CNI</title>
+  <link
+    rel="shortcut icon"
+    href="{% static 'chatbot_voice/chat.png' %}"
+  /> 
+  <link rel="stylesheet" href="{% static 'chatbot_voice/main.css' %}?{% now 'U' %}">
+</head>
+
+{% load icon %}
+
+
+<body>
+    <p>{% icon "message-square" class="css-class" height="42" width="42" %}</p>
+  <h3>Agent de réservation avec OpenAI</h3>
+
+  {% if result %}
+    {% if voice %}
+    <div class="voice">
+      <audio controls autoplay > <source src="{{ voice }}" type="audio/wav"> Your browser does not support the audio element. </audio>
+    </div>
+    {% endif %}
+
+    <div class="result">{{ result }}</div>
+  {% endif %}
+
+  <form onsubmit="openLoader()" action="." method="post">
+    {% csrf_token %}
+    <input type="text" name="demande" placeholder="Entrez votre demande" required />
+    <input type="submit" value="Envoyer le message" />
+  </form>
+
+  <div id="loadingModal">
+    <div class="spinner"></div>
+  </div>
+
+  <script>
+
+    function openLoader() {
+        document.getElementById("loadingModal").style.display = "block";
+      }
+    
+    </script>
+
+</body>

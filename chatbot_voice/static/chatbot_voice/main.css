@@ -1,0 +1,103 @@
+@font-face {
+    font-family: "ColfaxAI";
+    src: url(https://cdn.openai.com/API/fonts/ColfaxAIRegular.woff2)
+        format("woff2"),
+      url(https://cdn.openai.com/API/fonts/ColfaxAIRegular.woff) format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "ColfaxAI";
+    src: url(https://cdn.openai.com/API/fonts/ColfaxAIBold.woff2) format("woff2"),
+      url(https://cdn.openai.com/API/fonts/ColfaxAIBold.woff) format("woff");
+    font-weight: bold;
+    font-style: normal;
+  }
+  body,
+  input {
+    font-size: 16px;
+    line-height: 24px;
+    color: #353740;
+    font-family: "ColfaxAI", Helvetica, sans-serif;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
+  }
+  .icon {
+    width: 34px;
+  }
+  h3 {
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: bold;
+    color: #202123;
+    margin: 16px 0 40px;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+  }
+  input[type="text"] {
+    padding: 12px 16px;
+    border: 1px solid #10a37f;
+    border-radius: 4px;
+    margin-bottom: 24px;
+  }
+  ::placeholder {
+    color: #8e8ea0;
+    opacity: 1;
+  }
+  input[type="submit"] {
+    padding: 12px 0;
+    color: #fff;
+    background-color: #10a37f;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+  }
+  .result {
+    font-weight: bold;
+    margin: 20px 0 40px 0;
+    padding: 0 25%;
+  }
+
+#loadingModal {
+  margin-top: 40px;
+  display: none;
+}
+
+.spinner {
+  width: 30px;
+  height: 30px;
+  background-color: #10a37f;
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+    
+  -webkit-animation: rotateplane 1.2s infinite ease-in-out;
+  animation: rotateplane 1.2s infinite ease-in-out;
+}
+
+@-webkit-keyframes rotateplane {
+  0% { -webkit-transform: perspective(120px) }
+  50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+  100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+}
+
+@keyframes rotateplane {
+  0% { 
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg) 
+  } 50% { 
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg) 
+  } 100% { 
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
+}
