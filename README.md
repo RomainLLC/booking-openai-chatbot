@@ -2,7 +2,9 @@
 
 This is an example app to experiment a chatbot creation with OpenAI API
 
-demo-openai-chatbot-text-to-speech-web.mp4
+
+https://user-images.githubusercontent.com/33468314/236909051-d3061a17-5a19-4e44-9bfb-f9c3082d7f7b.mp4
+
 
 # Requirements
 
